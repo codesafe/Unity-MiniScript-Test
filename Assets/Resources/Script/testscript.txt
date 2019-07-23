@@ -1,0 +1,40 @@
+﻿
+// TODO. 기본적인 Card의 파라메터(변수)값은 Script에서 얻을수 있어야 한다.
+// Hearthstone을 기준으로 설명
+// 1. 비용 2. 공격력 3. 피
+
+///
+preaction = function();
+	print("preaction");
+	throwCode("test1", 1, 2);
+	throwCode("test2", 10, 22);
+end function
+
+//
+gethealth = function();
+	print("gethealth");
+
+
+end function
+
+// 
+discard = function();
+	print("discard");
+end function
+
+////////////////////////////////////////////////////
+
+branch = function(); 
+
+	if globals._param == "preaction" then
+		preaction();
+	else if globals._param == "gethealth" then
+		gethealth();
+	else if globals._param == "discard" then
+		discard();
+	end if
+
+end function
+
+//_param = null
+branch();
